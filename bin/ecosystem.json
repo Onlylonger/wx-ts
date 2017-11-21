@@ -1,0 +1,48 @@
+{
+  "apps": [{
+    "name": "wx-marketing-manager",
+    "script": "./server.js",
+    "exec_mode": "cluster",
+    "out_file": "/dev/null",
+    "error_file": "/dev/null",
+    "instances": 0,
+    "env": {
+      "COMMON_VARIABLE": "true"
+    }
+  }],
+  "deploy": {
+    "sit": {
+      "user": "node",
+      "host": "121.201.13.20",
+      "port": "9528",
+      "ref": "origin/sit",
+      "repo": "git@gitlab.jingzhuan.cn:yidejia/wx-marketing-manager.git",
+      "ssh_options": ["StrictHostKeyChecking=no"],
+      "path": "/home/node/www/nodeApp/wx-marketing-manager",
+      "post-deploy": "SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn && npm run sit && pm2 startOrRestart ./build/ecosystem.json --env sit",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "9404",
+        "APP_ENV": "sit"
+      }
+    },
+    "prod": {
+      "user": "node",
+      // 服务器迁移到 124.42.118.152
+      // 如果服务器压力大，需要迁移，需要找刚哥
+      // "host": ["124.42.118.152", "203.195.236.26", "123.207.242.224"],
+      "host": ["124.42.118.152"],
+      "port": "9528",
+      "ref": "origin/master",
+      "repo": "git@gitlab.jingzhuan.cn:yidejia/wx-marketing-manager.git",
+      "ssh_options": ["StrictHostKeyChecking=no"],
+      "path": "/home/node/www/nodeApp/wx-marketing-manager",
+      "post-deploy": "SASS_BINARY_SITE=https://npm.taobao.org/mirrors/node-sass/ yarn && npm run prod && pm2 startOrRestart ./build/ecosystem.json --env prod",
+      "env": {
+        "NODE_ENV": "production",
+        "PORT": "9404",
+        "APP_ENV": "prod"
+      }
+    }
+  }
+}

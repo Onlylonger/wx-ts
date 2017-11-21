@@ -1,0 +1,23 @@
+{
+  "name": "wx-ts",
+  "version": "1.0.0",
+  "description": "营销管家ts版本",
+  "main": "server.js",
+  "author": "Onlylonger",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  },
+  "scripts": {
+    "dev": "cross-env nodemon -w server.js && cd ./demo yarn run dev",
+    "sit": "cross-env nodemon -w server.js",
+    "pro": ""
+  },
+  "devDependencies": {
+    "cross-env": "^5.1.1",
+    "nodemon": "^1.12.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-hot-middleware": "^2.20.0"
+  }
+}
