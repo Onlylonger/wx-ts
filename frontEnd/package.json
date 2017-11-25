@@ -1,0 +1,11 @@
+{
+    "name": "admin-front-end",
+    "version": "1.0.0",
+    "main": "main.js",
+    "description": "前端依赖管理包",
+    "license": "MIT",
+    "dependencies": {
+        "element-ui": "^2.0.5",
+        "vue": "^2.5.8"
+    }
+}
