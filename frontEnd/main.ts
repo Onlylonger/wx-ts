@@ -1,12 +1,10 @@
 import Vue from 'vue'
-import ElementUi from "element-ui";
+import ElementUi from 'element-ui'
+import App from './src/view/App/index'
 
-new Vue({
+const vm = new Vue({
     el: '#app',
     render(h) {
-        return h('div', 'asssdfcc')
+        return h(App)
     }
 })
-
-
-console.log(process.env.NODE_ENV, ElementUi)

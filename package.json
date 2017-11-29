@@ -1,0 +1,39 @@
+{
+    "name": "wx-ts",
+    "version": "1.0.0",
+    "description": "营销管家ts版本",
+    "main": "server.js",
+    "author": "Onlylonger",
+    "license": "MIT",
+    "dependencies": {
+        "element-ui": "^2.0.5",
+        "express": "^4.16.2",
+        "vue": "^2.5.8"
+    },
+    "scripts": {
+        "dev": "cross-env NODE_ENV=dev node ./server/server.js",
+        "sit": "cross-env NODE_ENV=dev nodemon -w config -w server.js server.js",
+        "pro": ""
+    },
+    "devDependencies": {
+        "cross-env": "^5.1.1",
+        "css-loader": "^0.28.7",
+        "eslint": "^4.11.0",
+        "eslint-config-ydj": "^0.0.2",
+        "eslint-plugin-import": "^2.8.0",
+        "html-webpack-plugin": "^2.30.1",
+        "node-sass": "^4.7.2",
+        "sass-loader": "^6.0.6",
+        "ts-loader": "^3.1.1",
+        "tslint": "^5.8.0",
+        "tslint-config-prettier": "^1.6.0",
+        "typescript": "^2.6.1",
+        "vue-loader": "^13.5.0",
+        "vue-property-decorator": "^6.0.0",
+        "vue-style-loader": "^3.0.3",
+        "vue-template-compiler": "^2.5.8",
+        "webpack": "^3.8.1",
+        "webpack-dev-middleware": "^1.12.1",
+        "webpack-hot-middleware": "^2.20.0"
+    }
+}

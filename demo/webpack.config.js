@@ -1,44 +1,44 @@
-const path = require("path");
-const webpack = require("webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 
 module.exports = {
-    entry: "./src/main.ts",
-    devtool: "inline-source-map",
+    entry: './src/main.ts',
+    devtool: 'inline-source-map',
     devServer: {
-        contentBase: "./dist",
+        contentBase: './dist',
         hot: true
     },
     module: {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: "ts-loader",
+                loader: 'ts-loader',
                 options: {
                     appendTsSuffixTo: [/\.vue$/]
                 }
             },
             {
                 test: /\.vue$/,
-                loader: "vue-loader"
+                loader: 'vue-loader'
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(["dist"]),
+        new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: "Hot Module Replacement",
-            template: "./src/index.html"
+            title: 'Hot Module Replacement',
+            template: './src/index.html'
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: ['.ts', '.js']
     },
     output: {
-        filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     }
-};
+}

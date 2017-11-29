@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'dev') {
     const compiler = webpack(webpackConfig)
     const middleware = webpackMiddleware(compiler, {
         publicPath: webpackConfig.output.publicPath,
-        contentBase: 'src',
+        contentBase: '../frontEnd',
         stats: {
             colors: true,
             hash: false,

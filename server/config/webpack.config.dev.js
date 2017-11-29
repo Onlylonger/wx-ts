@@ -14,6 +14,21 @@ module.exports = {
         filename: '[name].js',
         publicPath: `${utils.rootPath}dist/dev`
     },
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
+                options: {
+                    appendTsSuffixTo: [/\.vue$/]
+                }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader'
+            }
+        ]
+    },
     plugins: [
         new HtmlWebpackPlugin({
             template: `${utils.rootPath}frontEnd/index.tmp.html`,
